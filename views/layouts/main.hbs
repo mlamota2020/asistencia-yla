@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Control de Asistencia - Prototipo</title>
+  
+  <style>
+
+/* Fondo */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #b9fbc0, #fef9ef);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      place-items: center;
+    }
+
+/* Ajustes del logo */
+    .logo {
+      width: 508px;
+      margin-bottom: -250px;
+      margin-left: auto;
+      margin-right: auto;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    }
+
+ /* Cuadro principal (Simulación de Lector de Código) */
+    .container {
+      background-color: #ffffff;
+      padding: 35px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+ /* Título */
+    h2 {
+      margin-bottom: 25px;
+      color: #2d4739;
+      font-size: 24px;
+    }
+
+ /* Ajuste de caja donde se escribe (input) */
+
+    input {
+      padding: 12px;
+      width: calc(100% - 4px); /* Para que no se desborde */
+      margin: 0 auto 20px auto; /* Centrado */
+      display: block;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+/* Focus: al dar click el exterior del recuadro cambia de color (innecesario pero profesional) */
+
+    input:focus {
+      border-color: #28a745;
+      outline: none;
+      box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+    }
+/* Botones */
+
+
+    button {
+      padding: 12px 25px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+/* Hover: Se activa al pasar el mouse por encima dando una imagen más limpia y profesional */
+    button:hover {
+      background-color: #218838;
+      transform: scale(1.02);
+    }
+
+/* Resultado */
+    .resultado {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s ease;
+    }
+
+/* Botón de lista */
+    #verListaBtn {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      background-color: #343a40;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    }
+
+/* Hover botón lista */
+    #verListaBtn:hover {
+      background-color: #1d2124;
+    }
+
+/* Cuadro asistencia */
+    #listaAsistencia {
+      position: fixed;
+      bottom: 70px;
+      left: 15px;
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-height: 300px;
+      overflow-y: auto;
+      font-size: 14px;
+      width: 260px;
+      display: none;
+      z-index: 1000;
+    }
+
+  </style>
+</head>
+
+<body>
+{{{body}}}
+</body>
+</html>
