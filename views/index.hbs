@@ -1,0 +1,49 @@
+
+ <img src="https://younglivingacademy.edu.ec/wp-content/uploads/2025/04/YLA.png" class="logo" alt="Logo">
+
+{{#if success}}
+  <div style="color: green; font-weight: bold; position: absolute; fixedin-top: 20px; margin-right:20px; background-color: white; padding: 20px; border-radius: 20px; box-shadow: 0px 30px 20px #95b4a5;" id="messages">
+    {{success}}
+  </div>
+{{/if}}
+
+{{#if error}}
+  <div style="color: red; font-weight: bold; position: fixed; margin-top: 20px; margin-left:20px; background-color: white; padding: 20px; border-radius: 20px; box-shadow: 0px 30px 20px #95b4a5;" id="messages">
+    {{error}}
+  </div>
+{{/if}}
+
+  <div class="container">
+    <h2>Simulación de Lector de Código</h2>
+
+    <form action="/asistir" method="POST">
+      <input name="studentId" type="text" placeholder="Escanea o escribe el código">
+      <button type="submit">Verificar Asistencia</button>
+    </form>
+    
+  </div>
+
+
+  <div id="listaAsisencia" style="position:fixed; bottom:60px; left:20px; background:white; padding:15px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.2); max-height:80vh; overflow-y:auto; font-size:14px; width:260px;">
+
+    <ul>
+      {{#each estudiantes}}
+      <li style="font-weight: bold; font-size:medium; margin-bottom: 25px">{{this.nombre}} {{this.apellido}}
+        <dd style="font-weight: normal; font-size: small;">Curso: {{this.curso}}</dd>
+        <dd style="font-weight: normal; font-size: small;">Cédula: {{this.cedula}}</dd>
+        <dd style="font-weight: bold; font-size: medium;">Estado: {{this.status}}</dd>
+      </li>
+      <hr>
+      {{/each}}
+    </ul>
+
+
+  </div>
+
+  <script>
+  // auto-hide flash messages after 5s
+  setTimeout(() => {
+    const messages = document.getDocumentById('messages');
+    messages.forEach(m => m.style.display = 'none');
+  }, 5000);
+</script>
