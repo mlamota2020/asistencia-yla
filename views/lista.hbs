@@ -1,0 +1,43 @@
+<div style="display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;">
+    <div><h1 style="margin-right:65vw;">Lista de estudiantes</h1></div>
+   <div><a href="/">Volver</a></div>
+   
+</div>
+
+{{#if success}}
+  <div style="color: green; font-weight: bold;" id="messages">{{success}}</div>
+{{/if}}
+{{#if error}}
+  <div style="color: red; font-weight: bold;" id="messages">{{error}}</div>
+{{/if}}
+
+<table cellpadding="5" cellspacing="10" border="1"  style=" text-align: center;width: 85%;" id="listita">
+  <thead style="background-color: #f0f0f0;">
+    <tr>
+      <th>Nombre</th>
+      {{#each weekDates}}
+        <th>{{this}}</th>
+      {{/each}}
+    </tr>
+  </thead>
+  <tbody style="font-size:small;">
+    {{#each estudiantes}}
+      <tr>
+        <td style="font-weight:bold;" id="nombres">{{this.nombre}} {{this.apellido}}</td>
+        {{#each this.displayAttendance}}
+          <td style="
+            {{#if (eq this 'present')}}background-color: #9eff9e;{{/if}}
+            {{#if (eq this 'late')}}background-color: #fff89e;{{/if}}
+            {{#if (eq this 'not present')}}background-color: #ff9e9e;{{/if}};">
+            {{this}}
+          </td>
+        {{/each}}
+        
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
