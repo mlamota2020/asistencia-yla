@@ -19,6 +19,7 @@
   <thead style="background-color: #f0f0f0;">
     <tr>
       <th>Nombre</th>
+      <th>Curso</th>
       {{#each weekDates}}
         <th>{{this}}</th>
       {{/each}}
@@ -28,11 +29,12 @@
     {{#each estudiantes}}
       <tr>
         <td style="font-weight:bold;" id="nombres">{{this.nombre}} {{this.apellido}}</td>
+        <td>{{this.curso}}</td>
         {{#each this.displayAttendance}}
           <td style="
-            {{#if (eq this 'present')}}background-color: #9eff9e;{{/if}}
-            {{#if (eq this 'late')}}background-color: #fff89e;{{/if}}
-            {{#if (eq this 'not present')}}background-color: #ff9e9e;{{/if}};">
+            {{#if (eq this 'Presente')}}background-color: #15241c;{{/if}}
+            {{#if (eq this 'Atrasado')}}background-color: #3b3600;border-radius:30px;padding:5px;{{/if}}
+            {{#if (eq this 'No ha Asistido')}}background-color: #300000;{{/if}};border-radius:30px;">
             {{this}}
           </td>
         {{/each}}
@@ -41,3 +43,4 @@
     {{/each}}
   </tbody>
 </table>
+
