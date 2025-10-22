@@ -1,3 +1,9 @@
+/*
+
+Lenguaje de programaciòn: JavaScript
+Base de datos: MongoDB (en la nube)
+
+*/
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
@@ -54,7 +60,7 @@ async function main() {
   // 🧾 GET - Show students and weekly attendance
 app.get('/', async (req, res) => {
   try {
-    const estudiantes = await collection.find().toArray();
+    const estudiantes = await collection.find().sort({curso: 1, apellido: 1, lista: 1}).toArray();
 
     const today = new Date();
     const todayStr = today.toISOString().split('T')[0];
@@ -81,7 +87,7 @@ app.get('/', async (req, res) => {
 
 app.get('/lista', async (req, res) => {
   try {
-    const estudiantes = await collection.find().toArray();
+    const estudiantes = await collection.find().sort({curso: 1, apellido: 1, lista: 1}).toArray();
 
     const today = new Date();
     const todayStr = today.toISOString().split('T')[0];
@@ -192,7 +198,7 @@ function getWeekDates(date) {
   monday.setHours(0,0,0,0); // normalize to start of day
 
   const days = [];
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     const dd = new Date(monday);
     dd.setDate(monday.getDate() + i);
     // format YYYY-MM-DD
